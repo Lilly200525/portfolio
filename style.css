@@ -1,0 +1,228 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    background-color: #e3d0e8;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInSlide 1s ease-out forwards;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+  }
+  
+  /* Profile Picture */
+  .profile-pic {
+    width: 200px;
+    height: 248px;
+    border-radius: 60%;
+    display: block;
+    margin: 25px auto;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(3.05);
+  }
+  
+  /* Sections */
+  section {
+    padding: 40px 20px;
+    background-color: #ebe7ed;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 1s ease both;
+  }
+  
+  /* Headings */
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+  }
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #00bcd4;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  h2:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* Skills Grid */
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .skills-list li {
+    background-color: #00bcd4;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .skills-list li:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Resume Button */
+  .resume-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    background-color: #00bcd4;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .resume-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .resume-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0)
+    );
+    transform: skewX(-20deg);
+    z-index: 2;
+  }
+  
+  .resume-btn:hover::before {
+    left: 125%;
+    transition: left 0.8s ease;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    background-color: #e3f2f3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+  
+    .skills-list {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  }
